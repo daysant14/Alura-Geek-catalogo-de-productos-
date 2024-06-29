@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #070707;
+    --second-bg-color: #be50da;
+    --text-color: #ededed;
+    --main-color: #850abe;
+    --main-color-fondo: #240235;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: var(--text-color);
+    margin: 0;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    z-index: 1;
+    position: relative;
+}
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background-color: var(--main-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: .3s;
+}
+
+.header.sticky {
+    background: var(--main-color);
+}
+
+.encabezado {
+    display: flex;
+    justify-content: center;
+}
+
+/* PRODUCTS */
+.products {
+    display: flex;
+    justify-content: flex-start; /* Alinea el contenido a la izquierda */
+    align-items: center;
+    flex-direction: column;
+    min-height: auto;
+    padding: 9rem 0;
+    flex: 1;
+}
+
+/* PRODUCTS */
+.product-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Alinea los productos a la izquierda */
+    gap: 5px; /* Espacio entre productos, ajusta según sea necesario */
+    max-width: 1200px; /* Establece un ancho máximo fijo */
+    width: 40%; /* Asegura que el contenedor ocupe el 40% del espacio disponible */
+    margin: 0 auto; /* Centra el contenedor horizontalmente si hay suficiente espacio */
+    overflow: hidden; /* Opcional: oculta cualquier contenido que sobresalga */
+}
+
+span {
+    color: var(--main-color);
+}
+
+.heading{
+    font-size: 3rem;
+}
+
+.product-content {
+    flex: 1 1 calc(33.33% - 10px); /* Ajusta el tamaño para que tres productos quepan en una fila */
+    position: relative;
+    padding: 0.8rem; /* Reduce el padding interno */
+    border: .1rem solid var(--main-color); /* Reduce el grosor del borde */
+    border-radius: .3rem; /* Reduce el radio del borde */
+    background: var(--main-color-fondo);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: calc(33.33% - 10px); /* Asegura que el ancho no supere el 33% menos el espacio entre productos */
+    margin-bottom: 1rem; /* Reduce el margen inferior */
+}
+
+.img {
+    width: 100%; /* Ajusta la imagen al ancho del contenedor */
+    height: 200px; /* Establece una altura fija para todas las imágenes */
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor sin deformarse */
+    border-radius: .3rem; /* Agrega bordes redondeados si deseas */
+}
+
+/* BREAKPOINTS */
+@media (max-width: 1200px) {
+    .product-content {
+        flex: 1 1 calc(25% - 10px); /* Ajusta el tamaño para que cuatro productos quepan en una fila en pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 992px) {
+    .product-content {
+        flex: 1 1 calc(33.33% - 10px); /* Ajusta el tamaño para que tres productos quepan en una fila */
+    }
+}
+
+@media (max-width: 768px) {
+    .product-row {
+        gap: 5px; /* Espacio entre productos en pantallas más pequeñas */
+    }
+
+    .product-content {
+        flex: 1 1 calc(50% - 5px); /* Ajusta el tamaño para que dos productos quepan en una fila */
+        margin-bottom: 0.8rem; /* Reduce el margen inferior */
+    }
+
+    .product-form {
+        max-width: 90%; /* Ajusta el tamaño del formulario para pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 576px) {
+    .product-content {
+        flex: 1 1 100%; /* Ajusta el tamaño para que un solo producto quepa en una fila */
+        margin-bottom: 1rem; /* Asegura suficiente espacio en la parte inferior */
+    }
+
+    .product-form {
+        max-width: 100%; /* Ajusta el tamaño del formulario a toda la pantalla */
+    }
+}
+
+
+.price {
+    font-size: 1.2rem; /* Reduce el tamaño de la fuente del precio */
+}
+
+.btn-boxp .btn {
+    font-size: 1.4rem; /* Reduce el tamaño del botón */
+}
+
+.btn-boxp .btn i {
+    font-size: 1.6rem; /* Reduce el tamaño del ícono en el botón */
+}
+
+.bx {
+    font-family: 'boxicons' !important;
+}
+
+
+/* PRODUCT FORM */
+.form-container {
+    position: fixed;
+    top: 10%;
+    right: 0;
+    bottom: 0;
+    width: 30%;
+    background-color: transparent; /* Asegura que el fondo sea transparente */
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 5; /* Asegura que el formulario esté sobre otros contenidos */
+    overflow-y: auto; /* Permite el desplazamiento si el contenido es demasiado alto */
+}
+
+.product-form {
+    width: 100%;
+    max-width: 300px;
+    background-color: var(--main-color);
+    padding: 2rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-form h2 {
+    font-size: 1.8rem; /* Reduce el tamaño del encabezado */
+    text-align: center;
+    margin-bottom: 1.5rem; /* Reduce el margen inferior */
+    color: var(--text-color);
+}
+
+.product-form p{
+  display: flex;
+  justify-content: center;
+}
+.product-form label {
+    font-size: 1.4rem; /* Reduce el tamaño de la fuente de las etiquetas */
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.product-form input[type="text"],
+.product-form input[type="number"],
+.product-form input[type="file"] {
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.product-form .form-buttons {
+    display: flex;
+    flex-direction: row; /* Los botones están en fila por defecto */
+    justify-content: space-between;
+    margin-top: 1.5rem; /* Reduce el margen superior */
+}
+
+.product-form .btn-clear,
+.product-form .btn-submit {
+    padding: 0.8rem 1.5rem; /* Reduce el padding */
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1.4rem; /* Reduce el tamaño de la fuente */
+}
+
+/* BREAKPOINTS */
+@media (max-width: 1200px) {
+    .product-content {
+        flex: 1 1 calc(25% - 10px); /* Ajusta el tamaño para que cuatro productos quepan en una fila en pantallas más pequeñas */
+    }
+
+    .product-form .btn-clear,
+    .product-form .btn-submit {
+        font-size: 1.3rem; /* Ajusta el tamaño de la fuente para pantallas más pequeñas */
+        padding: 0.7rem 1.3rem; /* Ajusta el padding */
+    }
+}
+
+@media (max-width: 992px) {
+    .product-content {
+        flex: 1 1 calc(33.33% - 10px); /* Ajusta el tamaño para que tres productos quepan en una fila */
+    }
+
+    .product-form .btn-clear,
+    .product-form .btn-submit {
+        font-size: 1.2rem; /* Ajusta el tamaño de la fuente para pantallas más pequeñas */
+        padding: 0.6rem 1.2rem; /* Ajusta el padding */
+    }
+}
+
+@media (max-width: 768px) {
+    .product-row {
+        gap: 5px; /* Espacio entre productos en pantallas más pequeñas */
+    }
+
+    .product-content {
+        flex: 1 1 calc(50% - 5px); /* Ajusta el tamaño para que dos productos quepan en una fila */
+        margin-bottom: 0.8rem; /* Reduce el margen inferior */
+    }
+
+    .product-form {
+        max-width: 90%; /* Ajusta el tamaño del formulario para pantallas más pequeñas */
+    }
+
+    .product-form .form-buttons {
+        flex-direction: column; /* Cambia a columna para apilar los botones verticalmente */
+        align-items: stretch; /* Estira los botones para que ocupen el ancho completo */
+    }
+
+    .product-form .btn-clear,
+    .product-form .btn-submit {
+        font-size: 1.1rem; /* Ajusta el tamaño de la fuente para pantallas más pequeñas */
+        padding: 0.5rem 1rem; /* Ajusta el padding */
+        margin-bottom: 0.5rem; /* Agrega margen inferior para separación */
+    }
+
+    .product-form .btn-submit {
+        margin-bottom: 0; /* Elimina el margen inferior en el último botón */
+    }
+}
+
+@media (max-width: 576px) {
+    .product-content {
+        flex: 1 1 100%; /* Ajusta el tamaño para que un solo producto quepa en una fila */
+        margin-bottom: 1rem; /* Asegura suficiente espacio en la parte inferior */
+    }
+
+    .product-form {
+        max-width: 100%; /* Ajusta el tamaño del formulario a toda la pantalla */
+    }
+
+    .product-form .btn-clear,
+    .product-form .btn-submit {
+        font-size: 1rem; /* Ajusta el tamaño de la fuente para pantallas más pequeñas */
+        padding: 0.4rem 0.8rem; /* Ajusta el padding */
+    }
+}

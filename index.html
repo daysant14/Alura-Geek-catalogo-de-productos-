@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Permissions-Policy" content="*">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Alura Geek</title>
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h2 class="encabezado">Alura Geek<i class='bx bxs-rocket' style='color:#ddb015'></i></h2>
+        </header>
+
+        <video autoplay muted loop id="myVideo">
+            <source src="./video/videogalaxi.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+
+        <section class="products" id="products" data-lista>
+            <h1 class="heading">My <span>products</span></h1>
+            <div class="product-row">
+                <!-- Los productos serán cargados aquí -->
+            </div>
+        </section>
+        
+
+        <div class="form-container">
+            <form class="product-form">
+                <h2>Add Product<i class='bx bxs-rocket' style='color:#ddb015'></i></h2>
+                <label for="product-name">Nombre del Producto:</label>
+                <input type="text" id="product-name" name="product-name" required>
+
+                <label for="product-image">Imagen:</label>
+                <input type="file" id="product-image" name="product-image" accept="image/*" required>
+
+                <label for="product-price">Precio:</label>
+                <input type="number" id="product-price" name="product-price" required>
+
+                <div class="form-buttons">
+                    <button type="button" class="btn-clear">Limpiar</button>
+                    <button type="submit" class="btn-submit">Enviar</button>
+                </div>
+                <p>Alura Geek<i class='bx bxs-rocket' style='color:#ddb015'></i> || Creador: Dayely Maria Santana</p>
+            </form>
+            
+        </div>
+    </div>
+
+    <script type="module" src="./js/conexionAPI.js"></script>
+    <script type="module" src="./js/showProducts.js"></script>
+</body>
+</html>
+
+
